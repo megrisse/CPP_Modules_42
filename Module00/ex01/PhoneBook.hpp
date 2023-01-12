@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:21:11 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/09 23:48:03 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/12 22:16:15 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,37 +15,65 @@
 
 #include <iostream>
 
-class	PhoneBook
+class	Contact
 {
 public:
-	int 		number;
+	int			index;
+	std::string number;
 	std::string firstname;
 	std::string lastname;
 	std::string nickname;
-	PhoneBook();
-	void add(){
-	std::cout << "firstname : ";
-	std::cin >> firstname;
-	std::cout << "lastname : ";
-	std::cin >> lastname;
-	std::cout << "nickname : ";
-	std::cin >> nickname;
-	std::cout << "number : ";
-	std::cin >> number;
-		
+	std::string secret;
+}contact;
+
+class	PhoneBook
+{
+public:
+	Contact	Contacts[8];
+	void	search(){
+		int	i = 0;
+		while (i < 8){		
+			std::cout << Contacts[i].firstname << std::endl;
+			std::cout << Contacts[i].lastname << std::endl;
+			std::cout << Contacts[i].nickname << std::endl;
+			std::cout << Contacts[i].number << std::endl;
+			std::cout << Contacts[i].index << std::endl;
+			i++;
+		}
 	};
-	~PhoneBook();
+	void	exit(){
+		std::cout << "exit" << std::endl;
+	};
+			PhoneBook(){
+		std::cout << "PhoneBook created" << "\v" << "|";
+		for (int i = 0; i < 8; i++)
+		{	Contacts[i].firstname = '.';
+			Contacts[i].number = '.';
+			Contacts[i].index = i;
+			Contacts[i].lastname = '.';
+			Contacts[i].nickname = '.';
+			Contacts[i].secret = '.';}
+}
+			~PhoneBook(){
+		// std::cout << Contacts[0].firstname << std::endl;
+		// std::cout << Contacts[0].lastname << std::endl;
+		// std::cout << Contacts[0].nickname << std::endl;
+		// std::cout << Contacts[0].number << std::endl;
+		// std::cout << Contacts[0].index << std::endl;
+}
+	void	add(Contact* contact, int i);
 };
 
-PhoneBook::PhoneBook(){
+void	PhoneBook::add(Contact* contact, int i){
+	
+	std::cout << "firstname : ";
+	std::cin >> contact[i].firstname;
+	std::cout << "lastname : ";
+	std::cin >> contact[i].lastname;
+	std::cout << "nickname : ";
+	std::cin >> contact[i].nickname;
+	std::cout << "number : ";
+	std::cin >> contact[i].number;
 }
-
-PhoneBook::~PhoneBook(){
-}
-
-// void PhoneBook::add()
-// {
-// 	PhoneBook contact;
-// }
 
 #endif
