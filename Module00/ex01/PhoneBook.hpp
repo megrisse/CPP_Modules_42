@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:21:11 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/12 22:16:15 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/13 21:54:23 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,14 @@ public:
 	Contact	Contacts[8];
 	void	search(){
 		int	i = 0;
-		while (i < 8){		
-			std::cout << Contacts[i].firstname << std::endl;
-			std::cout << Contacts[i].lastname << std::endl;
-			std::cout << Contacts[i].nickname << std::endl;
-			std::cout << Contacts[i].number << std::endl;
-			std::cout << Contacts[i].index << std::endl;
+		
+		std::cout << "	index	|	firstname	|	lastname	|	nickname	| number " << std::endl;
+		while (i < 8){
+			std::cout << "	" <<Contacts[i].index;
+			std::cout << "	|	" << Contacts[i].firstname << "	";
+			std::cout << "	|	" << Contacts[i].lastname << "	";
+			std::cout << "	|	" << Contacts[i].nickname << "	";
+			std::cout << "	|	" << Contacts[i].number << std::endl;
 			i++;
 		}
 	};
