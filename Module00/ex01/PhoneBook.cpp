@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:21:08 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/16 02:46:42 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/16 02:54:09 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int main(){
     {
         std::cout << "TYPE AN COMMAND : ADD | SEARCH | EXIT" << std::endl;
         contact.Contacts[contact.contactNumbers].index = contact.contactNumbers;
-        std::cout << contact.contactNumbers << std::endl;
         std::string input;
         if (!(std::getline(std::cin, input)))
             return (1);
