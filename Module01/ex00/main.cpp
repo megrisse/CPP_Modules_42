@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 20:20:11 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/18 20:40:26 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/18 21:52:53 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(){
     Zombie      zombie2;
 
     zombie1.newZombie("merouane");
-    zombie1.announce();
+    // zombie1.announce();
     zombie2.randomChump("Foo");
     return (0);
 }
