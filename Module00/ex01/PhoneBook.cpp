@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:21:08 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/18 18:11:40 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/18 20:46:22 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	PhoneBook::add(Contact* contact, int i){
 	else if (str.length() < 1)
 		{std::cout << "YOU SHOULD FILL IT" << std::endl; return ;}
 	else
-		{str = str.append("            "); str = str.substr(0, 10); contact[i].setFirstname(str); contact->getFirstname();}
+		{str = str.append("            "); str = str.substr(0, 10); contact[i].setFirstname(str);}
 	std::cout << "lastname : ";
 	if (!(std::getline(std::cin, str)))
 		return ;
@@ -40,7 +40,7 @@ void	PhoneBook::add(Contact* contact, int i){
 	else if (str.length() < 1)
 		{std::cout << "YOU SHOULD FILL IT" << std::endl ; return ;}
 	else
-		{str = str.append("             "); str = str.substr(0, 10); contact[i].setLastname(str); contact->getLastname();}
+		{str = str.append("             "); str = str.substr(0, 10); contact[i].setLastname(str);}
 	std::cout << "nickname : ";
 	if (!std::getline(std::cin, str))
 		return ;
@@ -49,7 +49,7 @@ void	PhoneBook::add(Contact* contact, int i){
 	else if (str.length() < 1)
 		{std::cout << "YOU SHOULD FILL IT" << std::endl; return ;}
 	else
-		{str = str.append("             "); str = str.substr(0, 10); contact[i].setNickname(str); contact->getNickname();}
+		{str = str.append("             "); str = str.substr(0, 10); contact[i].setNickname(str);}
 	std::cout << "number : ";
 	if (!std::getline(std::cin, str))
 		return ;
@@ -58,7 +58,7 @@ void	PhoneBook::add(Contact* contact, int i){
 	else if (str.length() < 1)
 		{std::cout << "YOU SHOULD FILL IT" << std::endl; return ;}
 	else
-		{str = str.append("             ");	str = str.substr(0, 10); contact[i].setNumber(str); contact->getNumber();}
+		{str = str.append("             ");	str = str.substr(0, 10); contact[i].setNumber(str);}
 	std::cout << "Darkest secret : ";
 	if (!std::getline(std::cin, str))
 		return ;
@@ -67,7 +67,7 @@ void	PhoneBook::add(Contact* contact, int i){
 	else if (str.length() < 1)
 		{std::cout << "YOU SHOULD FILL IT" << std::endl; return ;}
 	else
-		{str = str.append("             "); str = str.substr(0, 10); contact[i].setSecret(str); contact->getSecret();}
+		{str = str.append("             "); str = str.substr(0, 10); contact[i].setSecret(str);}
 	if (contactNumbers < 8)
 		contactNumbers++;
 }
