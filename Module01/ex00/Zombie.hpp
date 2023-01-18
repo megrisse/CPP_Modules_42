@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 18:44:43 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/18 20:21:50 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/18 22:23:04 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ private:
 public:
     void	announce();
     Zombie();
-    Zombie* newZombie(std::string name);
-    void    randomChump( std::string name );
+    Zombie(std::string name);
     ~Zombie();
 };
 
+void    randomChump( std::string name );
+Zombie* newZombie(std::string name);
 #endif
