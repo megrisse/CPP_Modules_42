@@ -5,27 +5,27 @@
 #                                                     +:+ +:+         +:+      #
 #    By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/09 21:20:59 by megrisse          #+#    #+#              #
-#    Updated: 2023/01/18 20:16:12 by megrisse         ###   ########.fr        #
+#    Created: 2023/01/18 20:14:02 by megrisse          #+#    #+#              #
+#    Updated: 2023/01/18 20:25:44 by megrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = PhoneBook
+NAME = Zombie
 
 CC = c++
 
-HEADER = PhoneBook.hpp
+HEADER = Zombie.hpp
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = PhoneBook.cpp main.cpp Contact.cpp
+SRC = Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(CFLAGS) -std=c++98 $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o : %.cpp $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -37,4 +37,3 @@ fclean : clean
 	rm -rf $(NAME)
 
 re : fclean all
-	
