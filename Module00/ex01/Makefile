@@ -6,7 +6,7 @@
 #    By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/09 21:20:59 by megrisse          #+#    #+#              #
-#    Updated: 2023/01/10 00:04:02 by megrisse         ###   ########.fr        #
+#    Updated: 2023/01/18 17:03:38 by megrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ HEADER = PhoneBook.hpp
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = PhoneBook.cpp
+SRC = PhoneBook.cpp main.cpp Contact.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -27,7 +27,7 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	$(CC) $(CFLAGS) -std=c++98 $(OBJ) -o $(NAME)
 
-%.o : %.c $(HEADER)
+%.o : %.cpp $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
