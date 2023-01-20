@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 22:03:36 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/20 20:17:38 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/20 20:26:13 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int main(int ac, char **av){
         std::cout << std::endl;
     }
     else
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
     return (0);
 }
