@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/18 18:44:43 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/20 02:23:54 by megrisse         ###   ########.fr       */
+/*   Created: 2023/01/19 19:02:38 by megrisse          #+#    #+#             */
+/*   Updated: 2023/01/20 19:06:00 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "HumanA.hpp"
 
-# include <iostream>
+HumanA::HumanA(){
+    std::cout << "HumanA was created" << std::endl;   
+}
 
-class Zombie{
-private:
-	std::string	_name;
-public:
-	void	announce();
-	Zombie();
-	Zombie(std::string name);
-	~Zombie();
-	void setName(std::string name);
-};
+HumanA::HumanA(std::string name){
+    this->_name = name;
+}
 
-void	randomChump( std::string name );
-// Zombie*	newZombie(std::string name);
-Zombie*	zombieHorde( int N, std::string name);
-
-#endif
+void    HumanA::attack(){
+    std::cout << this->_name << " attacks with their " << this->type;
+}
