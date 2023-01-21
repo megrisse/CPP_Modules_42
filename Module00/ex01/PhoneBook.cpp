@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:21:08 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/18 21:48:13 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/20 22:03:38 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	PhoneBook::add(Contact* contact, int i){
 	else if (str.length() < 1)
 		{std::cout << "YOU SHOULD FILL IT" << std::endl; return ;}
 	else
-		{str = str.append("             "); str = str.substr(0, 10); contact[i].setSecret(str);}
+		{str = str.append("             "); str = str.substr(0, 10); contact[i].setSecret(str);}	
 	if (contactNumbers < 8)
 		contactNumbers++;
 }

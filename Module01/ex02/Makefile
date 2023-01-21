@@ -6,7 +6,7 @@
 #    By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 14:06:55 by megrisse          #+#    #+#              #
-#    Updated: 2023/01/19 14:11:15 by megrisse         ###   ########.fr        #
+#    Updated: 2023/01/21 21:31:55 by megrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,5 +34,5 @@ clean :
 fclean : clean
 	rm -rf $(NAME)
 
-re : fclean clean
+re : fclean all
 

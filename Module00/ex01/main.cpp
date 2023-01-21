@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:43:55 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/18 18:32:56 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/20 21:54:42 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(){
 		std::string input;
 		if (!(std::getline(std::cin, input)))
 			return (1);
-		if (input == "ADD" && contact.contactNumbers <= 8)
+		if (input == "ADD")
 			{contact.add(contact.Contacts, (i % 8)); i++; continue;}
 		if (input == "SEARCH")
 			{contact.search(); continue;}

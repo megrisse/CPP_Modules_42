@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 19:02:41 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/20 19:09:37 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/21 21:30:14 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@
 #include "Weapon.hpp"
 
 class HumanA{
-    private :
+    private:
         std::string _name;
-        Weapon      type;
-    public :
-        HumanA();
-        HumanA(std::string name);
-        ~HumanA();
+        Weapon      *type;
+    public:
+        HumanA(std::string name, Weapon &);
         void    attack();
 };
 

@@ -6,11 +6,15 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 19:02:55 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/20 18:50:55 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/21 21:19:53 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
+
+Weapon::Weapon(){
+
+}
 
 Weapon::Weapon(std::string type) {
     this->_type = type;
@@ -19,7 +23,7 @@ Weapon::Weapon(std::string type) {
 Weapon::~Weapon(void) {
 }
 
-std::string const	&Weapon::getType(void) {
+const std::string	&Weapon::getType(void) {
     return (this->_type);
 }
 
