@@ -5,20 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/19 19:02:52 by megrisse          #+#    #+#              #
-#    Updated: 2023/01/21 23:20:15 by megrisse         ###   ########.fr        #
+#    Created: 2023/01/21 23:41:46 by megrisse          #+#    #+#              #
+#    Updated: 2023/01/24 18:58:50 by megrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Weapon
+NAME = Sed
 
 CC = c++
 
-HEADERS = Weapon.hpp HumanA.hpp HumanB.hpp
-
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
+SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -27,7 +25,7 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o : %.cpp $(HEADERS)
+%.o : %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :

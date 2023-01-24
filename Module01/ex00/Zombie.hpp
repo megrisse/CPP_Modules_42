@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 18:44:43 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/19 00:22:47 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/23 22:33:16 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include <iostream>
 
-class Zombie{
+class Zombie
+{
 private:
 	std::string	_name;
 public:

@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:21:11 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/18 18:05:29 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/23 22:34:09 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 #include <sstream>
 #include "Contact.hpp"
 
-class	PhoneBook
-{
+class	PhoneBook{
 public:
 	Contact	Contacts[8];
 	int		contactNumbers;

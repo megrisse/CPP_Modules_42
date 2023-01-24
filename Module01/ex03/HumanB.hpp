@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 19:02:47 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/21 21:30:21 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/21 23:44:29 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,14 @@
 
 #include "./Weapon.hpp"
 
-
-class HumanB{
+class	HumanB{
 	private:
-		std::string _name;
+		std::string	_name;
 		Weapon*		type;
 	public:
 		HumanB(std::string name);
-		void	setWeapon(Weapon &_type);
-		void    attack();
+		void	setWeapon(Weapon& _type);
+		void	attack();
 };
 
 #endif

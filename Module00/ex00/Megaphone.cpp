@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 22:03:36 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/20 20:26:13 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/23 22:52:00 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int main(int ac, char **av){
                 std::cout << (char)std::toupper(av[i][j]);
                 j++;
             }
-        // std::cout << " ";
         }
         std::cout << std::endl;
     }

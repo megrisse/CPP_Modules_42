@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 20:24:25 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/18 17:03:16 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/23 22:34:02 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 # define CONTACT_HPP
 
 #include <iostream>
-// #include "Phonebook.hpp"
 
-class	Contact
-{
+class	Contact{
 private:
 	int			index;
 	std::string number;
