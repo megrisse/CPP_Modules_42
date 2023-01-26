@@ -5,25 +5,25 @@
 #                                                     +:+ +:+         +:+      #
 #    By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/21 23:41:46 by megrisse          #+#    #+#              #
-#    Updated: 2023/01/26 00:13:55 by megrisse         ###   ########.fr        #
+#    Created: 2023/01/26 19:50:44 by megrisse          #+#    #+#              #
+#    Updated: 2023/01/26 19:51:45 by megrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Sed
+
+NAME = Harl
 
 CC = c++
 
-HEADER = Replace.hpp
+HEADER = Harl.hpp
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Replace.cpp
+SRC = main.cpp Harl.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)
-	@touch txt.txt
 
 $(NAME) : $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
@@ -36,7 +36,5 @@ clean :
 
 fclean : clean
 	rm -rf $(NAME)
-	rm -rf *.replace
-	rm -rf *.txt
 
 re : fclean all

@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   replace.hpp                                        :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 17:45:16 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/26 00:32:20 by megrisse         ###   ########.fr       */
+/*   Created: 2023/01/25 18:29:11 by megrisse          #+#    #+#             */
+/*   Updated: 2023/01/26 18:29:45 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include <fstream>
 
-class   Replace{
-    public:
-        std::ifstream   inp;
-        std::ofstream   out;
-        void            replace(std::string& line, std::string s1, std::string s2);
-        void            exit(int key);
+class Harl{
+	private:
+		void    debug();
+		void    info();
+		void    warning();
+		void    error();
+	public:
+		void    complain(std::string level);
 };

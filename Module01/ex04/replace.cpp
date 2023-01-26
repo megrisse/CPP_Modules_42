@@ -6,11 +6,11 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:45:10 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/25 18:18:25 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/26 00:32:24 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "replace.hpp"
+#include "Replace.hpp"
 
 void    Replace::replace(std::string &line, std::string s1, std::string s2)
 {
@@ -22,7 +22,10 @@ void    Replace::replace(std::string &line, std::string s1, std::string s2)
     }
 }
 
-void    Replace::exit(){
-    std::cout << "FILE COULDN'T BE OPENED !!!" << std::endl;
+void    Replace::exit(int key){
+    if (key == 0)
+        std::cout << "FILE COULDN'T BE OPENED !!!" << std::endl;
+    else if (key == 1)
+        std::cout << "FILE COULDN'T BE CREATED !!!" << std::endl;
     std::exit(0);
 }

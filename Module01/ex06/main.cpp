@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   replace.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 17:45:16 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/26 00:32:20 by megrisse         ###   ########.fr       */
+/*   Created: 2023/01/26 20:05:25 by megrisse          #+#    #+#             */
+/*   Updated: 2023/01/26 20:26:33 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Harl.hpp"
 
-#include <iostream>
-#include <fstream>
-
-class   Replace{
-    public:
-        std::ifstream   inp;
-        std::ofstream   out;
-        void            replace(std::string& line, std::string s1, std::string s2);
-        void            exit(int key);
-};
+int main(int ac, char **av){
+    
+    if (ac == 2){
+        Harl    Obj;
+        Obj.complain(av[1]);
+    }
+    else
+        std::cout << "ERROR ARGUMENTS NUMBER !!" << std::endl;
+    return 0;
+}
