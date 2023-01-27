@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 18:50:13 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/27 20:39:16 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/27 21:39:51 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class Fixed {
 private:
 	int					FixedPoint;
-	static const int	RawBits;
+	static const int	FracionalBits = 8;
 public:
 	Fixed();//default constructer
 	~Fixed();
