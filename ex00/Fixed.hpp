@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Replace.hpp                                        :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ajaidi <ajaidi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 17:45:16 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/26 21:45:15 by megrisse         ###   ########.fr       */
+/*   Created: 2022/12/08 17:50:08 by ajaidi            #+#    #+#             */
+/*   Updated: 2022/12/09 13:05:15 by ajaidi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
 #include <iostream>
-#include <fstream>
 
-class   Replace{
-    public:
-        std::ifstream   inp;
-        std::ofstream   out;
-        void            replace(std::string& line, std::string s1, std::string s2);
-        void            exit(int key);
+class Fixed
+{
+  private:
+    int fixed_point;
+    static const int fractional_bits = 8;
+  public:
+    Fixed();
+    Fixed(const Fixed&);
+    ~Fixed();
+    Fixed& operator = (const Fixed&);
+    int getRawBits(void) const;
+    void setRawBits(int const);
 };
+

@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 00:28:59 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/26 21:40:58 by megrisse         ###   ########.fr       */
+/*   Created: 2023/01/27 18:50:13 by megrisse          #+#    #+#             */
+/*   Updated: 2023/01/27 20:39:16 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
 
-int main(){
+# include <iostream>
 
-    Zombie* heapZombie = zombieHorde(5, "Foo");
-    for (int i = 0; i < 5; i++)
-    {
-        heapZombie[i].announce();
-    }
-    delete [] heapZombie;
-}
+class Fixed {
+private:
+	int					FixedPoint;
+	static const int	RawBits;
+public:
+	Fixed();//default constructer
+	~Fixed();
+	Fixed(const Fixed &fixed);//copy constructer
+	Fixed &operator = (const Fixed &fixed);//copy assignment operator overload
+	int		getRawBits() const ;
+	void	setRawBits(int const raw);
+};

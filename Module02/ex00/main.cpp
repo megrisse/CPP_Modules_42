@@ -5,19 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 00:28:59 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/26 21:40:58 by megrisse         ###   ########.fr       */
+/*   Created: 2023/01/27 18:50:16 by megrisse          #+#    #+#             */
+/*   Updated: 2023/01/27 20:34:09 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
 int main(){
 
-    Zombie* heapZombie = zombieHorde(5, "Foo");
-    for (int i = 0; i < 5; i++)
-    {
-        heapZombie[i].announce();
-    }
-    delete [] heapZombie;
+    Fixed   a;
+    Fixed   b(a);
+    Fixed   c;
+
+    c = b;
+
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
 }
