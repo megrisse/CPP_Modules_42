@@ -5,22 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 18:50:16 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/28 01:05:26 by megrisse         ###   ########.fr       */
+/*   Created: 2023/01/28 21:26:52 by megrisse          #+#    #+#             */
+/*   Updated: 2023/01/30 21:37:02 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
 
-int main(){
+int main() {
 
-    Fixed   a;
-    Fixed   b(a);
-    Fixed   c;
+    ClapTrap    bob("bob");
+    ClapTrap    jim;
 
-    c = b;
-
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
+    jim = bob;
+    jim.setName("jim");
+    bob.attack(jim.getName());
+    jim.takeDamage(5);
+    bob.takeDamage(5);
+    jim.beRepaired(15);
+    jim.takeDamage(5);
+    bob.beRepaired(5);
+    bob.takeDamage(5);
+    bob.takeDamage(5);
+    bob.beRepaired(5);
+    jim.beRepaired(15);
 }

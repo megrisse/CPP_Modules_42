@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 20:41:54 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/27 21:17:21 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/01/30 17:42:03 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main() {
 
     Fixed       a;
     Fixed const b(10);
-    Fixed const c(42.42f);
+    Fixed const c(42.51f);
     Fixed const d(b);
 
     a = Fixed(1234.4321f);
