@@ -6,19 +6,19 @@
 #    By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/28 21:48:38 by megrisse          #+#    #+#              #
-#    Updated: 2023/01/31 22:04:43 by megrisse         ###   ########.fr        #
+#    Updated: 2023/02/01 18:45:48 by megrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScavTrap
+NAME = DiamondTrap
 
 CC = c++
 
-HEADER = ScavTrap.hpp
+HEADER = DiamondTrap.hpp
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = ClapTrap.cpp main.cpp ScavTrap.cpp
+SRC = ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

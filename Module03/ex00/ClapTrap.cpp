@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 21:26:45 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/30 21:41:23 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/01 16:43:22 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void    ClapTrap::attack(const std::string& target) {
 
 	if (this->HitPoint == 0)
 		return ;
-	std::cout << "ClapTrap " << Name << " attacks " << target << " ,causing " << AttackDamage << std::endl; 
+	std::cout << "ClapTrap " << Name << " attacks " << target << " ,causing " << AttackDamage  << " Dammage" << std::endl; 
 }
 
 void    ClapTrap::takeDamage(unsigned int amount) {

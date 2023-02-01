@@ -6,27 +6,24 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 21:26:52 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/01 18:09:11 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/01 18:35:22 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main() {
 	
 	ScavTrap	scav("Scav");
-	// ClapTrap	clap("Clap");
+	ClapTrap	clap("Clap");
+	FragTrap	frag("frag");
 
-	scav.setName("Scav");
-	// scav.attack(clap.getName());
-	// clap.takeDamage(20);
-	// clap.attack(scav.getName());
-	std::cout << "Scav HitPoint : " << scav.getHitPoint() << std::endl;
-	std::cout << "scav EnergyPoint : " << scav.getEnergyPoint() << std::endl;
-	std::cout << "Scav AttackDamage : " << scav.getAttackDamage() << std::endl;
-	// std::cout << "Clap HitPoint : " << clap.getHitPoint() << std::endl;
-	// std::cout << "Clap EnergyPoint : " << clap.getEnergyPoint() << std::endl;
-	// std::cout << "Clap AttackDamage : " << clap.getAttackDamage() << std::endl;
+	scav.attack(clap.getName());
+	clap.takeDamage(20);
+	clap.attack(scav.getName());
+	frag.attack(scav.getName());
+	scav.takeDamage(30);
 	scav.guardGate();
+	frag.highFivesGuys();
 	return 0;
 }
