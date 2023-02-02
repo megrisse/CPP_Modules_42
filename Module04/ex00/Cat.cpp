@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 18:12:16 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/02 17:03:47 by megrisse         ###   ########.fr       */
+/*   Created: 2023/02/01 21:30:42 by megrisse          #+#    #+#             */
+/*   Updated: 2023/02/01 21:35:50 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Cat.hpp"
 
-#include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
+Cat::Cat() {
+    
+    std::cout << "Cat : Default Constructer Called" << std::endl;
+}
 
-class   FragTrap : public virtual ClapTrap {
-public:
-	FragTrap();
-	~FragTrap();
-	FragTrap(const FragTrap &);
-	FragTrap &operator=(const FragTrap &);
-	FragTrap(std::string name);
-	void	attack(const std::string &);
-	void	highFivesGuys(void);
-};
+Cat::Cat(const Cat &type) {
+
+    *this = type;
+}
+
+Cat::~Cat() {
+    
+    std::cout << "Cat : Default Destructer Called" << std::endl;
+}
+
+Cat &Cat::operator=(const Cat &type) {
+
+    if (this != &type)
+        this->type = type.type;
+    return *this;
+}

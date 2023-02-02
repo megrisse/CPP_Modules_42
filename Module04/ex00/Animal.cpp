@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 18:12:16 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/02 17:03:47 by megrisse         ###   ########.fr       */
+/*   Created: 2023/02/01 21:12:18 by megrisse          #+#    #+#             */
+/*   Updated: 2023/02/01 21:35:42 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Animal.hpp"
 
-#include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
+Animal::Animal() {
 
-class   FragTrap : public virtual ClapTrap {
-public:
-	FragTrap();
-	~FragTrap();
-	FragTrap(const FragTrap &);
-	FragTrap &operator=(const FragTrap &);
-	FragTrap(std::string name);
-	void	attack(const std::string &);
-	void	highFivesGuys(void);
-};
+    std::cout << "Animal : Default Constructer Called" << std::endl;
+}
+
+Animal::Animal(const Animal &type) {
+
+    *this = type;
+}
+
+Animal::~Animal() {
+    
+    std::cout << "Animal : Default Destructer Called" << std::endl;
+}
+
+Animal  &Animal::operator=(const Animal &type) {
+
+    if (this != &type)
+        this->type = type.type;
+    return *this;
+}

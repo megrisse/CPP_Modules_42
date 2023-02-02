@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:12:13 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/01 18:33:36 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/02 17:00:36 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,13 @@ FragTrap &FragTrap::operator=(const FragTrap &name) {
 FragTrap::FragTrap(const FragTrap &name) {
 
 	this->Name = name.getName();
+}
+
+void    FragTrap::attack(const std::string& target) {
+
+	if (this->EnergyPoint == 0)
+		return ;
+	std::cout << "FragTrap " << Name << " attacks " << target << " ,causing " << AttackDamage  << " Dammage" << std::endl; 
 }
 
 void	FragTrap::highFivesGuys() {

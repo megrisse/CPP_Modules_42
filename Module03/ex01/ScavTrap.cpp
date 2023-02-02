@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 21:42:35 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/01 17:03:15 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/02 17:02:34 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,27 +47,14 @@ ScavTrap::ScavTrap(const ScavTrap &name) {
 	this->Name = name.getName();
 }
 
+void    ScavTrap::attack(const std::string& target) {
+
+	if (this->EnergyPoint == 0)
+		return ;
+	std::cout << "ScavTrap : " << Name << " attacks " << target << " ,causing " << AttackDamage  << " Dammage" << std::endl; 
+}
+
 void    ScavTrap::guardGate() {
 
 	std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
 }
-
-// void	ScavTrap::setName(std::string name) {
-
-// 	Name = name;
-// }
-
-// void	ScavTrap::setHitPoint(int amount) {
-
-// 	HitPoint = amount;
-// }
-
-// void	ScavTrap::setEnergyPoint(int amount) {
-
-// 	EnergyPoint = amount;
-// }
-
-// void	ScavTrap::setAttackDamage(int amount) {
-
-// 	AttackDamage = amount;
-// }
