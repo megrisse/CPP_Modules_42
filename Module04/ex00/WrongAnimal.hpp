@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 21:12:23 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/04 16:15:41 by megrisse         ###   ########.fr       */
+/*   Created: 2023/02/04 16:00:33 by megrisse          #+#    #+#             */
+/*   Updated: 2023/02/04 16:14:57 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#pragma once 
 
-int main() {
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
-	const	Animal* meta = new Animal();
-	const	Animal*	j = new	Dog();
-	const	Animal*	i = new Cat();
-	const	WrongAnimal* wrong = new WrongCat();
-	
+class WrongAnimal {
+protected:
+	std::string Type;
+public:
+	WrongAnimal();
+	WrongAnimal(const WrongAnimal &);
+	virtual ~WrongAnimal();
+	WrongAnimal &operator=(const WrongAnimal &);
+	void    setType(std::string);
+	std::string getType() const ;
+	void    makeSound() const ;
+};
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
-	wrong->makeSound();
-
-	delete meta;
-	delete j;
-	delete i;
-	delete wrong;
-}
