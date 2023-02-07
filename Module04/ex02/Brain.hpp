@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 21:24:48 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/07 22:20:35 by megrisse         ###   ########.fr       */
+/*   Created: 2023/02/06 19:29:06 by megrisse          #+#    #+#             */
+/*   Updated: 2023/02/07 21:44:49 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
 
-class Dog : virtual public Animal, virtual public Brain {
-private:
-	Brain*	brain;
+class Brain {
+protected:
+	std::string	Ideas[100];
 public:
-	Dog();
-	Dog(const Dog &);
-	~Dog();
-	Dog &operator=(const Dog &);
-	void    makeSound() const;
-	void	setBrain(Brain &);
+	Brain();
+	Brain(const Brain &);
+	virtual	~Brain();
+	Brain	&operator=(const Brain &);
+	void	setIdea(std::string, int);
+	std::string	getIdea() const ;
 };

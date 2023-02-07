@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 21:24:48 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/07 22:20:35 by megrisse         ###   ########.fr       */
+/*   Created: 2023/02/06 19:29:02 by megrisse          #+#    #+#             */
+/*   Updated: 2023/02/07 21:39:24 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
-#include "Animal.hpp"
 #include "Brain.hpp"
 
-class Dog : virtual public Animal, virtual public Brain {
-private:
-	Brain*	brain;
-public:
-	Dog();
-	Dog(const Dog &);
-	~Dog();
-	Dog &operator=(const Dog &);
-	void    makeSound() const;
-	void	setBrain(Brain &);
-};
+Brain::Brain() {
+
+	std::cout << "Brain : Default Constructer Called" << std::endl;
+}
+
+Brain::Brain(const Brain &brain) {
+	
+	*this = brain;
+}
+
+Brain::~Brain() {
+
+	std::cout << "Brain : Default Destructer Called" << std::endl;
+}
+
+Brain	&Brain::operator=(const Brain &brain) {
+	
+	if (this != &brain)
+		for (int i = 0; i < 100; i++)
+			this->Ideas[i] = brain.Ideas[i];
+	return *this;
+}
+

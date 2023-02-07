@@ -6,11 +6,11 @@
 #    By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/01 21:12:26 by megrisse          #+#    #+#              #
-#    Updated: 2023/02/07 22:32:32 by megrisse         ###   ########.fr        #
+#    Updated: 2023/02/07 22:33:12 by megrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Animal1
+NAME = Animal2
 
 CC = c++
 

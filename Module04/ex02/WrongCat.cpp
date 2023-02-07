@@ -1,49 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 21:24:46 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/07 22:31:44 by megrisse         ###   ########.fr       */
+/*   Created: 2023/02/04 16:07:04 by megrisse          #+#    #+#             */
+/*   Updated: 2023/02/04 16:16:11 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-Dog::Dog() {
-
-	std::cout << "Dog : Default Constructer Called" << std::endl;
-	brain = new Brain();
-	Type = "Dog";
+WrongCat::WrongCat() {
+	
+	std::cout << "WrongCat : Default Constructer Called" << std::endl;
+	this->Type = "WrongCat";
 }
 
-Dog::Dog(const Dog &type) {
+WrongCat::WrongCat(const WrongCat &type) {
 
-	brain = new Brain();
 	*this = type;
 }
 
-Dog::~Dog() {
-	
-	delete brain;
-	std::cout << "Dog : Default Destructer Called" << std::endl;
+WrongCat::~WrongCat() {
+
+	std::cout << "WrongCat : Default Destructer Called" << std::endl;
 }
 
-Dog &Dog::operator=(const Dog &type) {
+WrongCat &WrongCat::operator=(const WrongCat &type) {
 
 	if (this != &type)
 		this->Type = type.Type;
 	return (*this);
 }
 
-void    Dog::makeSound() const {
+void	WrongCat::makeSound() const {
 
-	std::cout << "Dogs Bark" << std::endl;
-}
-
-void	Dog::setBrain(Brain &brain) {
-
-	this->brain = &brain;
+	std::cout << "WrongCats meowing" << std::endl;
 }

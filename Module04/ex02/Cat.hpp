@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 21:24:48 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/07 22:20:35 by megrisse         ###   ########.fr       */
+/*   Created: 2023/02/01 21:30:45 by megrisse          #+#    #+#             */
+/*   Updated: 2023/02/07 21:43:21 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Dog : virtual public Animal, virtual public Brain {
+class Cat : virtual public Animal, virtual public Brain {
 private:
-	Brain*	brain;
+    Brain*  brain;
 public:
-	Dog();
-	Dog(const Dog &);
-	~Dog();
-	Dog &operator=(const Dog &);
-	void    makeSound() const;
-	void	setBrain(Brain &);
+    Cat();
+    Cat(const Cat &);
+    ~Cat();
+    Cat &operator=(const Cat &);
+    void    makeSound() const ;
+    void    setBrain(Brain &);
 };
