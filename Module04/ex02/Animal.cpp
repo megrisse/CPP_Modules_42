@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 21:12:18 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/07 22:33:36 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/09 01:15:24 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ std::string Animal::getType() const {
     return (this->Type);
 }
 
-// void    Animal::makeSound() const {
+void    Animal::makeSound() const {
 
-//     std::cout << "Animals Have Many Sounds" << std::endl;
-// }
+    std::cout << "Animals Have Many Sounds" << std::endl;
+}

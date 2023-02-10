@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 21:30:42 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/07 22:31:18 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/10 18:28:59 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Cat::~Cat() {
 
 Cat &Cat::operator=(const Cat &type) {
 
+	brain = new Brain();
 	if (this != &type)
 		this->Type = type.Type;
 	return *this;

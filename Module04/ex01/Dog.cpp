@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 21:24:46 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/07 22:31:44 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/10 18:27:19 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 Dog::Dog() {
 
 	std::cout << "Dog : Default Constructer Called" << std::endl;
-	brain = new Brain();
 	Type = "Dog";
+	brain = new Brain();
 }
 
 Dog::Dog(const Dog &type) {
 
 	brain = new Brain();
-	*this = type;
+	*brain = *(type.brain);
 }
 
 Dog::~Dog() {
@@ -33,6 +33,9 @@ Dog::~Dog() {
 
 Dog &Dog::operator=(const Dog &type) {
 
+	brain = new Brain();
+	for (int i = 0; i < 100; i++)
+		brain->setIdea("Bone", i);
 	if (this != &type)
 		this->Type = type.Type;
 	return (*this);

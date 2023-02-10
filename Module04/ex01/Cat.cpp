@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 21:30:42 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/07 22:31:18 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/09 01:48:28 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 Cat::Cat() {
 	
 	std::cout << "Cat : Default Constructer Called" << std::endl;
-	brain = new Brain();
 	this->Type = "Cat";
+	brain = new Brain();
 }
 
 Cat::Cat(const Cat &type) {
 
 	brain = new Brain();
-	*this = type;
+	*brain = *(type.brain);
 }
 
 Cat::~Cat() {
@@ -33,8 +33,11 @@ Cat::~Cat() {
 
 Cat &Cat::operator=(const Cat &type) {
 
+	brain = new Brain();
+	for(int i = 0; i < 100; i++)
+		brain->setIdea("milk", i);
 	if (this != &type)
-		this->Type = type.Type;
+		*brain = *(type.brain);
 	return *this;
 }
 

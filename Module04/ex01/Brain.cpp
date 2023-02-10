@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:29:02 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/07 21:39:24 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:14:24 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,12 @@ Brain	&Brain::operator=(const Brain &brain) {
 	return *this;
 }
 
+void	Brain::setIdea(std::string idea, int i) {
+	
+	Ideas[i] = idea;
+}
+
+std::string	Brain::getIdeas() const {
+
+	return (*this->Ideas);
+}

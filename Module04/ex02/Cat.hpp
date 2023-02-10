@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 21:30:45 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/07 21:43:21 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/10 19:58:05 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat : virtual public Animal, virtual public Brain {
+class Cat : virtual public Animal {
 private:
     Brain*  brain;
 public:

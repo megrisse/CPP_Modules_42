@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 21:12:20 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/07 22:52:44 by megrisse         ###   ########.fr       */
+/*   Created: 2023/02/08 17:33:39 by megrisse          #+#    #+#             */
+/*   Updated: 2023/02/08 17:47:40 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Bureaucrat.hpp"
 
-#include <iostream>
+int main() {
 
-class Animal {
-protected:
-	std::string Type;
-public:
-	Animal();
-	Animal(const Animal &);
-	virtual ~Animal();
-	Animal &operator=(const Animal &);
-	void    setType(std::string);
-	std::string getType() const ;
-	virtual void    makeSound() const ;
-};
+    
+}

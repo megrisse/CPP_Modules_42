@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 21:12:23 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/07 22:20:05 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/09 01:42:54 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,26 @@
 
 int main() {
 
-	// const	Animal* meta = new Animal();
-	const	Animal*	j = new	Dog();
-	const	Animal*	i = new Cat();
-	// const	WrongAnimal* wrong = new WrongCat();
-	// const	WrongAnimal* wwrong = new WrongAnimal();
-	// Animal a;
+	// const Animal	*j = new Dog();
+	// const Animal	*i = new Cat();
+
+	Animal *tab = new Animal[4];
+
+	for (int i = 0; i < 2; i++)
+	{
+		tab[i] = Dog();
+	}
+	for (int i = 2; i < 4; i++)
+	{
+		tab[i] = Cat();
+	}
+	// std::cout << "TAB[0] ideas = " << tab[0].
 	
-
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
-	// meta->makeSound();
-	// wrong->makeSound();
-	// wwrong->makeSound();
-
-	// delete meta;
-	delete j;
-	delete i;
-	// delete wrong;
-	// delete wwrong;
+	std::cout << tab[0].getType() << std::endl;
+	std::cout << tab[3].getType() << std::endl;
+	// tab[1].makeSound();
+	delete [] tab;
+	// delete j;
+	// delete i;
 	return 0;
 }

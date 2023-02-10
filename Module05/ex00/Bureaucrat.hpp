@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 21:12:20 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/07 22:52:44 by megrisse         ###   ########.fr       */
+/*   Created: 2023/02/08 17:33:48 by megrisse          #+#    #+#             */
+/*   Updated: 2023/02/09 23:51:01 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,20 @@
 
 #include <iostream>
 
-class Animal {
+class   Bureaucrat {
 protected:
-	std::string Type;
+    const std::string   Name;
+    int                 Grade;
 public:
-	Animal();
-	Animal(const Animal &);
-	virtual ~Animal();
-	Animal &operator=(const Animal &);
-	void    setType(std::string);
-	std::string getType() const ;
-	virtual void    makeSound() const ;
+    Bureaucrat();
+    Bureaucrat(const Bureaucrat &);
+    ~Bureaucrat();
+    Bureaucrat  &operator=(const Bureaucrat &);
+    Bureaucrat(std::string, int);
+    void    setName(std::string);
+    std::string getName() const ;
+    void    setGrade(int);
+    int     getGrade() const ;
+    void    incrementGrade();
+    void    decrementGrade();
 };
