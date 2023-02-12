@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:29:02 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/08 16:14:24 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/11 20:48:43 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Brain::~Brain() {
 }
 
 Brain	&Brain::operator=(const Brain &brain) {
-	
+
 	if (this != &brain)
 		for (int i = 0; i < 100; i++)
 			this->Ideas[i] = brain.Ideas[i];

@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 16:00:33 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/04 16:14:57 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/11 21:05:22 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ protected:
 public:
 	WrongAnimal();
 	WrongAnimal(const WrongAnimal &);
-	virtual ~WrongAnimal();
+	~WrongAnimal();
 	WrongAnimal &operator=(const WrongAnimal &);
 	void    setType(std::string);
 	std::string getType() const ;

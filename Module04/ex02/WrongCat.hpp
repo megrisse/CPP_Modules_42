@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 16:05:11 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/04 16:14:34 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/11 18:25:56 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "WrongAnimal.hpp"
 
-class WrongCat : virtual public WrongAnimal {
+class WrongCat : public WrongAnimal {
 public:
     WrongCat();
     WrongCat(const WrongCat &);

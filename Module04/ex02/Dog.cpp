@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 21:24:46 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/07 22:31:44 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/11 20:53:42 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Dog::~Dog() {
 
 Dog &Dog::operator=(const Dog &type) {
 
+	brain = new Brain();
 	if (this != &type)
 		this->Type = type.Type;
 	return (*this);

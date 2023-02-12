@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:33:45 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/09 23:52:39 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/12 23:45:01 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,13 @@ Bureaucrat::~Bureaucrat() {
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &name) {
 
 	if (this != &name)
-		this->Name = name.Name
+		*this = name;
 	return *this;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : Name(name), Grade(grade) {
 
-	std::cout << "Bureaucrat Constructer Called" << std::endl;
-}
-
-void    Bureaucrat::setName(std::string name) {
-
-	this->Name = name;
+	std::cout << "Bureaucrat : Constructer Called" << std::endl;
 }
 
 std::string Bureaucrat::getName() const {

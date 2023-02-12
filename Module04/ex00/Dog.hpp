@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 21:24:48 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/04 15:39:06 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/11 18:23:51 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 
-class Dog : virtual public Animal {
+class Dog : public Animal {
 public:
 	Dog();
 	Dog(const Dog &);

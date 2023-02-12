@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:21:08 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/09 18:11:19 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/10 20:40:54 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,3 +105,16 @@ void	PhoneBook::search(){
 	std::cout << "number : " << Contacts[i].getNumber() << std::endl;
 	std::cout << "secret : " << Contacts[i].getSecret() << std::endl;}}
 };
+
+
+
+Animal::make
+cat::make
+
+Animal::sir
+cat::sir
+
+
+Animal::make
+dog::make
+

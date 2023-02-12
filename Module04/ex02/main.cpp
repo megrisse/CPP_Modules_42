@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 21:12:23 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/09 01:16:07 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/11 18:27:48 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main() {
 
-	const	Animal* meta = new Animal();
+	// const	Animal* meta = new Animal();
 	const	Animal*	j = new	Dog();
 	const	Animal*	i = new Cat();
 	// const	WrongAnimal* wrong = new WrongCat();
@@ -27,11 +27,11 @@ int main() {
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound();
 	j->makeSound();
-	meta->makeSound();
+	// meta->makeSound();
 	// wrong->makeSound();
 	// wwrong->makeSound();
 
-	delete meta;
+	// delete meta;
 	delete j;
 	delete i;
 	// delete wrong;
