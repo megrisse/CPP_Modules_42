@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:33:45 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/13 02:34:23 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/14 20:47:34 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,13 @@ void	Bureaucrat::incrementGrade() {
 void	Bureaucrat::decrementGrade() {
 
 	this->Grade += 1;
+}
+
+void	Bureaucrat::signForm(Form &obj) {
+
+	if (obj.getIndicator())
+		{std::cout << Name << "Signed " << obj.getGradeToExcute() << std::endl; return;}
+	std::cout << Name << " Didn't Sign " << obj.getName() << " Because Bureaucrat Grade Is Lower Than The Required" << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &obj) {

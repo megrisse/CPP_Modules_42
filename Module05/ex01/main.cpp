@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:33:39 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/14 02:57:45 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/14 20:46:52 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,12 @@ int main() {
 	
 	b = c;
 	Form	f = Form("Form", 1, 0);
+	Form	d = Form("GhaHbil", 1, 0);
 
 	f.beSigned(b);
+	d.beSigned(c);
+	b.signForm(f);
+	c.signForm(d);
 	try
 	{
 		
