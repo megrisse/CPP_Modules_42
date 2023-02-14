@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:33:48 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/13 02:31:34 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/14 02:57:25 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ public:
     class GradeTooHighException : public std::exception{
       const char *what()  const throw() {
         
-        return ("GradeTooHighException");
+        return ("Bureaucrat : GradeTooHighException");
       };
     };
     
     class GradeTooLowException : public std::exception{
       const char *what()  const throw() {
         
-        return ("GradeTooLowException");
+        return ("Bureaucrat : GradeTooLowException");
       };
     };
     

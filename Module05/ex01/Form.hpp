@@ -6,14 +6,15 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 02:38:27 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/13 02:55:50 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/14 02:54:38 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form {
 private:
@@ -26,25 +27,27 @@ public:
 	~Form();
 	Form(const Form &);
 	Form &operator=(const Form &);
-	getName() const ;
-	getIndicator() const ;
-	getGradeToSign() const ;
-	getGradeToExcute() const ;
+	Form(const std::string &, const int &, const int &);
+	const std::string getName() const ;
+	bool getIndicator() const ;
+	int getGradeToSign() const ;
+	int getGradeToExcute() const ;
 	class GradeTooHighException : public std::exception {
 		
-		const char *what () throw() {
+		const char *what() const throw() {
 			
-			return ("GradeTooHighException");
+			return ("Form : GradeTooHighException");
 		};
-	}
+	};
 	
 	class GradeTooLowException : public std::exception {
 		
-		const char *what () throw() {
+		const char *what () const throw() {
 			
-			return ("GradeTooLowException");
+			return ("Form : GradeTooLowException");
 		};
-	}
+	};
+	bool	beSigned(Bureaucrat &);
 };
 
 std::ostream &operator<<(std::ostream &, Form const &);

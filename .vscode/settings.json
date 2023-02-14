@@ -56,7 +56,8 @@
         "iomanip": "cpp",
         "stack": "cpp",
         "__functional_03": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "cmath": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
