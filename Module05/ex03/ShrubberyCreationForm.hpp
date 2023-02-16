@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 22:20:50 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/15 21:14:50 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/16 21:53:53 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ public:
     ShrubberyCreationForm(const ShrubberyCreationForm &);
     ShrubberyCreationForm   &operator=(const ShrubberyCreationForm &);
     void	execute(Bureaucrat const &) const ;
+    std::string	getTarget() const ;
 };

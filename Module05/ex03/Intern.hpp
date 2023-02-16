@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 22:20:50 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/15 21:14:50 by megrisse         ###   ########.fr       */
+/*   Created: 2023/02/16 21:37:26 by megrisse          #+#    #+#             */
+/*   Updated: 2023/02/16 22:23:09 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "AForm.hpp"
-#include <fstream>
+#include "PresidentialPardonForm.hpp"
+#include "Form.hpp"
 
-class ShrubberyCreationForm : public AForm {
-private:
-    std::string Target;
-    ShrubberyCreationForm();
+class Intern {
 public:
-    ShrubberyCreationForm(const std::string &);
-    ~ShrubberyCreationForm();
-    ShrubberyCreationForm(const ShrubberyCreationForm &);
-    ShrubberyCreationForm   &operator=(const ShrubberyCreationForm &);
-    void	execute(Bureaucrat const &) const ;
+    Intern();
+    ~Intern();
+    Intern(const Intern &);
+    Intern  operator=(const Intern &);
+    Form    *makeForm(std::string const &name, std::string const &target);
 };

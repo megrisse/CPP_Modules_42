@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 22:25:48 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/15 17:48:14 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/16 21:54:13 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,9 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	(void)src;
     std::cout << "Copy Assignment operator" << std::endl;
 	return *this;
+}
+
+std::string	ShrubberyCreationForm::getTarget() const {
+
+	return this->Target;
 }

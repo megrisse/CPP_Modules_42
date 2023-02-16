@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 22:20:50 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/15 21:14:50 by megrisse         ###   ########.fr       */
+/*   Created: 2023/02/15 21:23:19 by megrisse          #+#    #+#             */
+/*   Updated: 2023/02/16 21:53:16 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "RobotomyRequestForm.hpp"
 
-#include "AForm.hpp"
-#include <fstream>
-
-class ShrubberyCreationForm : public AForm {
+class   PresidentialPardonForm : public AForm {
 private:
-    std::string Target;
-    ShrubberyCreationForm();
+	std::string Target;
+	PresidentialPardonForm();
 public:
-    ShrubberyCreationForm(const std::string &);
-    ~ShrubberyCreationForm();
-    ShrubberyCreationForm(const ShrubberyCreationForm &);
-    ShrubberyCreationForm   &operator=(const ShrubberyCreationForm &);
-    void	execute(Bureaucrat const &) const ;
+	PresidentialPardonForm(const std::string &);
+	~PresidentialPardonForm();
+	PresidentialPardonForm(const PresidentialPardonForm &);
+	PresidentialPardonForm &operator=(const PresidentialPardonForm &);
+	void    execute(Bureaucrat const &) const ;
+	std::string	getTarget() const ;
 };

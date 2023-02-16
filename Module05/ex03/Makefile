@@ -6,7 +6,7 @@
 #    By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 17:39:13 by megrisse          #+#    #+#              #
-#    Updated: 2023/02/15 21:32:46 by megrisse         ###   ########.fr        #
+#    Updated: 2023/02/16 21:43:29 by megrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-HEADER = PresidentialPardonForm.hpp
+HEADER = Intern.hpp
 
-SRC = Bureaucrat.cpp AForm.cpp main.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRC = Bureaucrat.cpp AForm.cpp main.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

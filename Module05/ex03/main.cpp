@@ -6,12 +6,12 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:33:39 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/15 22:38:21 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/16 21:54:50 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "Bureaucrat.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main() {
 
@@ -27,22 +27,25 @@ int main() {
 	
 	PresidentialPardonForm	p = PresidentialPardonForm("PresidentialPardonForm");
 	PresidentialPardonForm	s = PresidentialPardonForm("GhaHbil");
+	Intern	I;
+
+	I.makeForm(f.getName(), f.getTarget());
 	
-	f.beSigned(b);
-	d.beSigned(c);
-	r.beSigned(b);
-	g.beSigned(c);
-	p.beSigned(b);
-	s.beSigned(c);
-	b.signForm(f);
-	c.signForm(d);
-	b.signForm(r);
-	c.signForm(g);
-	b.signForm(p);
-	c.signForm(s);
-	f.execute(b);
-	r.execute(b);
-	p.execute(b);
+	// f.beSigned(b);
+	// d.beSigned(c);
+	// r.beSigned(b);
+	// g.beSigned(c);
+	// p.beSigned(b);
+	// s.beSigned(c);
+	// b.signForm(f);
+	// c.signForm(d);
+	// b.signForm(r);
+	// c.signForm(g);
+	// b.signForm(p);
+	// c.signForm(s);
+	// f.execute(b);
+	// r.execute(b);
+	// p.execute(b);
 	try
 	{
 		c.decrementGrade();
