@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:33:39 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/16 21:54:50 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 01:25:45 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int main() {
 
-	Bureaucrat b = Bureaucrat("Bureaucrat", 6);
-	Bureaucrat	c = Bureaucrat("wahedAkhor", 6);
+	Bureaucrat b = Bureaucrat("Bureaucrat", 73);
+	Bureaucrat	c = Bureaucrat("wahedAkhor", 73);
 	
 	b = c;
 	ShrubberyCreationForm	f = ShrubberyCreationForm("ShrubberyCreationForm");
@@ -30,7 +30,7 @@ int main() {
 	Intern	I;
 
 	I.makeForm(f.getName(), f.getTarget());
-	
+
 	// f.beSigned(b);
 	// d.beSigned(c);
 	// r.beSigned(b);
@@ -46,13 +46,16 @@ int main() {
 	// f.execute(b);
 	// r.execute(b);
 	// p.execute(b);
+
 	try
 	{
-		c.decrementGrade();
-		if (b.getGrade() < 1 || c.getGrade() < 1)
-			throw Bureaucrat::GradeTooHighException();
-		if (b.getGrade() > 150 || c.getGrade() > 150)
-			throw Bureaucrat::GradeTooLowException();
+		Intern	in;
+		AForm *l;
+		l = in.makeForm("robotomy request", "bender");
+		l->beSigned(b);
+		l->execute(b);
+		
+		delete l;
 	}
 	catch(const std::exception& e)
 	{

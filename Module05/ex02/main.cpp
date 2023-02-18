@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:33:39 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/15 22:38:21 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 00:45:36 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int main() {
 	PresidentialPardonForm	p = PresidentialPardonForm("PresidentialPardonForm");
 	PresidentialPardonForm	s = PresidentialPardonForm("GhaHbil");
 	
+	b.executeForm(f);
 	f.beSigned(b);
 	d.beSigned(c);
 	r.beSigned(b);
@@ -43,6 +44,7 @@ int main() {
 	f.execute(b);
 	r.execute(b);
 	p.execute(b);
+	
 	try
 	{
 		c.decrementGrade();

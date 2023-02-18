@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:33:48 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/14 22:41:42 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 00:34:41 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ public:
       };
     };
     void  signForm(AForm &);
+    void  executeForm(AForm const & form);
 };
 
 std::ostream  &operator<<(std::ostream &, Bureaucrat const &);

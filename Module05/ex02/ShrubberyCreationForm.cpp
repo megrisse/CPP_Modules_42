@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 22:25:48 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/15 17:48:14 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 01:19:02 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void    ShrubberyCreationForm::execute(const Bureaucrat &executer) const {
     std::ofstream outFile;
     outFile.open(Target + "_shrubbery");
     if (outFile.is_open())
-    {
+    {	
         outFile << "   *           "  << "   *   " << std::endl;
         outFile << "  ***          "  << "  ***  " << std::endl;
         outFile << " *****         "  << " ***** " << std::endl;

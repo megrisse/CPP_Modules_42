@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 22:09:55 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/15 02:43:20 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/17 23:49:01 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ private:
 	const int			GradeToExcute;
 public:
 	AForm();
-	~AForm();
+	virtual ~AForm();
 	AForm(const AForm &);
 	AForm	&operator=(const AForm &);
 	AForm(const std::string &, const int &, const int &);
@@ -56,7 +56,6 @@ public:
 			return ("AForm : NotSignedException");
 		};
 	};
-	
 	bool	beSigned(Bureaucrat &);
 	virtual	void	execute(Bureaucrat const &executor) const = 0;
 };

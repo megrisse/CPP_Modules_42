@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 17:50:21 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/15 22:35:23 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 01:13:10 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,14 @@ void    RobotomyRequestForm::execute(const Bureaucrat &executer) const {
 	{
 		std::cerr << e.what() << std::endl;
 	}
-
-	std::cout << Target << "Has Been Robotomized Successfflly 50% Of Time." << std::endl;
+	srand(time(NULL));
+  	int randomNumber = rand() % 10;
+  	if (randomNumber % 2) {
+    std::cout << Target << " has been robotomized successfully 50% of the time." << std::endl;
+  	}
+  	else {
+    	std::cout << "the robotomy failed" << std::endl;
+  	}
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : AForm("RobotomyRequestForm", obj.getGradeToSign(), obj.getGradeToExcute()) {

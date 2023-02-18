@@ -6,11 +6,11 @@
 #    By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/08 17:39:13 by megrisse          #+#    #+#              #
-#    Updated: 2023/02/16 21:43:29 by megrisse         ###   ########.fr        #
+#    Updated: 2023/02/17 23:49:13 by megrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat2
+NAME = Bureaucrat3
 
 CC = c++
 

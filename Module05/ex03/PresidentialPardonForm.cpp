@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 21:24:29 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/16 21:53:32 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 00:04:07 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,9 @@ PresidentialPardonForm::~PresidentialPardonForm() {
 
 void    PresidentialPardonForm::execute(const Bureaucrat &executer) const {
 
-	try
-	{
-		if (!getIndicator())
-			throw AForm::NotSigned();
-		else if (executer.getGrade() < getGradeToExcute())
-			throw AForm::GradeTooHighException();
-		else if (executer.getGrade() < 1)
-			throw AForm::GradeTooLowException();
-		
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	
-	std::cout << Target << " Has Been Pardoned By Zaphod Beeblebrox." << std::endl;
+	executer.executeForm(*this);
+	if (executer.getGrade() <= this->getGradeToExcute() && this->getIndicator())
+		std::cout << Target << " Has Been Pardoned By Zaphod Beeblebrox." << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) : AForm("PresidentialPardonForm", obj.getGradeToSign(), obj.getGradeToExcute()) {

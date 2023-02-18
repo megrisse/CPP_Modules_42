@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:33:45 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/14 22:41:52 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 00:34:55 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,16 @@ void	Bureaucrat::signForm(AForm &obj) {
 	if (obj.getIndicator())
 		{std::cout << Name << "Signed " << obj.getGradeToExcute() << std::endl; return;}
 	std::cout << Name << " Didn't Sign " << obj.getName() << " Because Bureaucrat Grade Is Lower Than The Required" << std::endl;
+}
+
+void	Bureaucrat::executeForm(AForm const &form) {
+	
+	if (Grade > form.getGradeToExcute())
+		throw GradeTooHighException();
+	else if (Grade < 1)
+		throw GradeTooLowException();
+	else
+		std::cout << Name << " Executed " << form.getName() << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &obj) {

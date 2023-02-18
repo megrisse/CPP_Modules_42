@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 17:50:21 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/16 21:52:43 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 01:12:12 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,15 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 
 void    RobotomyRequestForm::execute(const Bureaucrat &executer) const {
 
-	try
-	{
-		if (!getIndicator())
-			throw AForm::NotSigned();
-		else if (executer.getGrade() < getGradeToExcute())
-			throw AForm::GradeTooHighException();
-		else if (executer.getGrade() < 1)
-			throw AForm::GradeTooLowException();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
-	std::cout << Target << "Has Been Robotomized Successfflly 50% Of Time." << std::endl;
+	executer.executeForm(*this);
+	srand(time(NULL));
+  	int randomNumber = rand() % 10;
+  	if (randomNumber % 2) {
+    std::cout << Target << " has been robotomized successfully 50% of the time." << std::endl;
+  	}
+  	else {
+    	std::cout << "the robotomy failed" << std::endl;
+  	}
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : AForm("RobotomyRequestForm", obj.getGradeToSign(), obj.getGradeToExcute()) {
