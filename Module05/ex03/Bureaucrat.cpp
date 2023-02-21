@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:33:45 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/18 01:20:38 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:07:11 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,8 @@ void	Bureaucrat::signForm(AForm &obj) {
 
 void	Bureaucrat::executeForm(AForm const &form) const {
 	
-	if (Grade > form.getGradeToExcute())
-		throw GradeTooHighException();
-	else if (Grade < 1)
-		throw GradeTooLowException();
-	else if (!form.getIndicator())
-		throw AForm::NotSigned();
-	else
-		std::cout << Name << " Executed " << form.getName() << std::endl;
+	form.execute(*this);
+	std::cout << Name << " Executed " << form.getName() << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &obj) {

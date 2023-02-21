@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 22:25:48 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/18 01:06:21 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:08:27 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,12 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 
 void    ShrubberyCreationForm::execute(const Bureaucrat &executer) const {
 
-	executer.executeForm(*this);
+    if (!getIndicator())
+    	throw AForm::NotSigned();
+    else if (executer.getGrade() > getGradeToExcute())
+    	throw AForm::GradeTooLowException();
+    else if (executer.getGrade() < 1)
+    	throw AForm::GradeTooHighException();
     std::ofstream outFile;
     outFile.open(Target + "_shrubbery");
     if (outFile.is_open())

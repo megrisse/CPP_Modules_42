@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:33:39 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/14 20:46:52 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 02:32:11 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,21 @@
 
 int main() {
 
-	Bureaucrat b = Bureaucrat("Bureaucrat", 151);
-	Bureaucrat	c = Bureaucrat("wahedAkhor", 0);
+	Bureaucrat b = Bureaucrat("Bureaucrat", 150);
+	Bureaucrat	c = Bureaucrat("wahedAkhor", 1);
 	
-	b = c;
-	Form	f = Form("Form", 1, 0);
-	Form	d = Form("GhaHbil", 1, 0);
+	// b = c;
+	Form	f = Form("Form", 1, 1);
+	Form	d = Form("GhaHbil", 1, 1);
 
-	f.beSigned(b);
-	d.beSigned(c);
-	b.signForm(f);
-	c.signForm(d);
 	try
 	{
 		
+		f.beSigned(b);
+		d.beSigned(c);
+		b.signForm(f);
+		c.signForm(d);
 		c.decrementGrade();
-		if (b.getGrade() < 1 || c.getGrade() < 1)
-			throw Bureaucrat::GradeTooHighException();
-		if (b.getGrade() > 150 || c.getGrade() > 150)
-			throw Bureaucrat::GradeTooLowException();
 	}
 	catch(const std::exception& e)
 	{

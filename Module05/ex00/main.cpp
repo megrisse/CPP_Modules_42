@@ -6,26 +6,25 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:33:39 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/13 02:36:30 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/20 19:53:42 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include <math.h>
+#include <cmath>
+
 
 int main() {
 
-	Bureaucrat b = Bureaucrat("Bureaucrat", 151);
-	Bureaucrat	c = Bureaucrat("wahedAkhor", 0);
+	Bureaucrat b = Bureaucrat("Bureaucrat", 150);
+	Bureaucrat	c = Bureaucrat("wahedAkhor", 1);
 
-	b = c;
+	// b = c;
 	try
 	{
-		// b.incrementGrade();
-		c.decrementGrade();
-		if (b.getGrade() < 1 || c.getGrade() < 1)
-			throw Bureaucrat::GradeTooHighException();
-		if (b.getGrade() > 150 || c.getGrade() > 150)
-			throw Bureaucrat::GradeTooLowException();
+		b.decrementGrade();
+		c.incrementGrade();
 	}
 	catch(const std::exception& e)
 	{

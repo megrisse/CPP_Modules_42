@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 22:20:50 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/17 22:05:09 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:17:16 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class ShrubberyCreationForm : public AForm {
 private:
     std::string Target;
-    ShrubberyCreationForm();
 public:
+    ShrubberyCreationForm();
     ShrubberyCreationForm(const std::string &);
     ~ShrubberyCreationForm();
     ShrubberyCreationForm(const ShrubberyCreationForm &);

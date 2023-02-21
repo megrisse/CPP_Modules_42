@@ -57,7 +57,8 @@
         "stack": "cpp",
         "__functional_03": "cpp",
         "sstream": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "filesystem": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

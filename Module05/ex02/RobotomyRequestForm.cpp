@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 17:50:21 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/18 01:13:10 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 17:58:16 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,13 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 
 void    RobotomyRequestForm::execute(const Bureaucrat &executer) const {
 
-	try
-	{
-		if (!getIndicator())
-			throw AForm::NotSigned();
-		else if (executer.getGrade() < getGradeToExcute())
-			throw AForm::GradeTooHighException();
-		else if (executer.getGrade() < 1)
-			throw AForm::GradeTooLowException();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	if (!getIndicator())
+		throw AForm::NotSigned();
+	else if (executer.getGrade() > getGradeToExcute())
+		throw AForm::GradeTooLowException();
+	else if (executer.getGrade() < 1)
+		throw AForm::GradeTooHighException();
+
 	srand(time(NULL));
   	int randomNumber = rand() % 10;
   	if (randomNumber % 2) {

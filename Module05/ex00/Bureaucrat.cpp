@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:33:45 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/13 02:34:23 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 17:31:42 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,6 @@ std::string Bureaucrat::getName() const {
 	return (this->Name);
 }
 
-void	Bureaucrat::setGrade(int grade) {
-
-	this->Grade = grade;
-}
-
 int		Bureaucrat::getGrade() const {
 
 	return (this->Grade);
@@ -56,12 +51,14 @@ int		Bureaucrat::getGrade() const {
 
 void	Bureaucrat::incrementGrade() {
 
-	this->Grade -= 1;
+	if (this->Grade -= 1 < 0)
+		throw GradeTooHighException();
 }
 
 void	Bureaucrat::decrementGrade() {
 
-	this->Grade += 1;
+	if (this->Grade += 1 > 150)
+		throw GradeTooLowException();
 }
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &obj) {

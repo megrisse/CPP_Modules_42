@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 02:56:01 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/14 02:55:34 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 17:55:45 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,20 +55,12 @@ bool	Form::getIndicator() const {
 }
 
 bool	Form::beSigned(Bureaucrat &obj) {
-
-	try
-	{
-		if (obj.getGrade() >= GradeToSign)
-			Indicator = true;
-		else if (obj.getGrade() < GradeToSign)
-			throw Form::GradeTooLowException();
-		return (Indicator);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	return (false);
+	
+	if (obj.getGrade() <= GradeToSign)
+		this->Indicator = true;
+	else (obj.getGrade() > GradeToSign)
+		throw Form::GradeTooLowException();
+	return (Indicator);
 }
 
 Form	&Form::operator=(const Form &src) {

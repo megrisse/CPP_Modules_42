@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:33:45 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/18 00:34:55 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:04:58 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,14 @@ int		Bureaucrat::getGrade() const {
 
 void	Bureaucrat::incrementGrade() {
 
-	this->Grade -= 1;
+	if (this->Grade -= 1 < 0)
+		throw GradeTooHighException();
 }
 
 void	Bureaucrat::decrementGrade() {
 
-	this->Grade += 1;
+	if (this->Grade += 1 > 150)
+		throw GradeTooLowException();
 }
 
 void	Bureaucrat::signForm(AForm &obj) {
@@ -73,12 +75,8 @@ void	Bureaucrat::signForm(AForm &obj) {
 
 void	Bureaucrat::executeForm(AForm const &form) {
 	
-	if (Grade > form.getGradeToExcute())
-		throw GradeTooHighException();
-	else if (Grade < 1)
-		throw GradeTooLowException();
-	else
-		std::cout << Name << " Executed " << form.getName() << std::endl;
+	form.execute(*this);
+	std::cout << Name << " Executed " << form.getName() << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &obj) {

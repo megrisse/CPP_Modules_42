@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 21:23:19 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/16 21:53:16 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:17:23 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 class   PresidentialPardonForm : public AForm {
 private:
 	std::string Target;
-	PresidentialPardonForm();
 public:
+	PresidentialPardonForm();
 	PresidentialPardonForm(const std::string &);
 	~PresidentialPardonForm();
 	PresidentialPardonForm(const PresidentialPardonForm &);

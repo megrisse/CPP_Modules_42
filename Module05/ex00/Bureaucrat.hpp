@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:33:48 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/13 02:31:34 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 17:31:31 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ public:
     Bureaucrat  &operator=(Bureaucrat const &);
     Bureaucrat(std::string, int);
     std::string getName() const ;
-    void    setGrade(int);
     int     getGrade() const ;
     void    incrementGrade();
     void    decrementGrade();

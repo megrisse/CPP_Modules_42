@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 17:50:21 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/18 01:12:12 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:08:40 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,12 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 
 void    RobotomyRequestForm::execute(const Bureaucrat &executer) const {
 
-	executer.executeForm(*this);
+    if (!getIndicator())
+    	throw AForm::NotSigned();
+    else if (executer.getGrade() > getGradeToExcute())
+    	throw AForm::GradeTooLowException();
+    else if (executer.getGrade() < 1)
+    	throw AForm::GradeTooHighException();
 	srand(time(NULL));
   	int randomNumber = rand() % 10;
   	if (randomNumber % 2) {

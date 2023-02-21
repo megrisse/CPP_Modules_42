@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 21:23:19 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/18 17:41:11 by megrisse         ###   ########.fr       */
+/*   Created: 2023/02/21 02:02:32 by megrisse          #+#    #+#             */
+/*   Updated: 2023/02/21 02:05:26 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RobotomyRequestForm.hpp"
+#pragma once
 
-class   PresidentialPardonForm : public AForm {
+#include <iostream>
+
+class   Serializer {
 private:
-	std::string Target;
+    Serializer();
 public:
-	PresidentialPardonForm();
-	PresidentialPardonForm(const std::string &);
-	~PresidentialPardonForm();
-	PresidentialPardonForm(const PresidentialPardonForm &);
-	PresidentialPardonForm &operator=(const PresidentialPardonForm &);
-	void    execute(Bureaucrat const &) const ;
-};
+    ~Serializer();
+    Serializer(const Serializer &);
+    Serializer &operator =(const Serializer &);
+    uintptr_t   serialize(Data *)
+    Data *deserialize(uintptr_t);
+}
