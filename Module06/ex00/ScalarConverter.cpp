@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 21:42:49 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/21 01:57:54 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:56:58 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,6 @@ double ScalarConverter::getDouble(double type) {
 	else
 		return (-INFINITY);
 }
-
-
 
 void	ScalarConverter::convert(std::string &src) {
 
