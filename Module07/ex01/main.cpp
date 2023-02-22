@@ -5,23 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 16:41:39 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/22 17:02:00 by megrisse         ###   ########.fr       */
+/*   Created: 2023/02/22 17:03:04 by megrisse          #+#    #+#             */
+/*   Updated: 2023/02/22 17:18:51 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "whatever.hpp"
+#include "iter.hpp"
+
+void    powerOf2(int &n) {
+
+	n *= 2;
+}
 
 int main() {
 
+	int arr[6] = {1, 2, 3, 4, 5, 6};
+	inter(arr, 6, powerOf2);
+	
+	for (size_t i = 0; i < 6; i++){
 
-	int a = 1;
-	int c = 13;
-	std::cout << "Before swap A = " << a << std::endl;
-	std::cout << "Before swap C = " << c << std::endl;
-	swap(a, c);
-	std::cout << "After swap A = " << a << std::endl;
-	std::cout << "After swap C = " << c << std::endl;
-	std::cout << min(a, c) << std::endl;
-	std::cout << max(a, c) << std::endl;
+		std::cout << arr[i] << std::endl;
+	}
+	return 0;
 }
