@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 19:06:32 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/22 15:47:31 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/22 15:50:41 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,4 @@ int main() {
     identify(p);
     identify(*p);
     delete p;
-    return 0;
 }
