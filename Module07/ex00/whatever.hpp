@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 21:42:43 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/22 16:11:03 by megrisse         ###   ########.fr       */
+/*   Created: 2023/02/22 16:41:29 by megrisse          #+#    #+#             */
+/*   Updated: 2023/02/22 16:55:03 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#pragma once
 
+#include "iostream"
 
-int main(int ac, char **av) {
+template <typename T>
+void    swap(T &a, T &b) {
+    
+    T   swap;
+    swap = a;
+    a = b;
+    b = swap;
+}
 
-    if (ac == 2) {
-        
-        std::string src = av[1];
-        ScalarConverter::convert(src);
-    }
-    else
-        std::cout << "ERROR ARGUMENTS\n";
+template <typename T>
+T   min(T a, T b) {
+
+    return (a > b) ? b : a;
+}
+
+template <typename T>
+T   max(T a, T b) {
+
+    return (a > b) ? a : b;
 }

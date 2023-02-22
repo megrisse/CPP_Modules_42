@@ -5,21 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 21:42:43 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/22 16:11:03 by megrisse         ###   ########.fr       */
+/*   Created: 2023/02/22 16:41:39 by megrisse          #+#    #+#             */
+/*   Updated: 2023/02/22 16:52:42 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "whatever.hpp"
+
+int main() {
 
 
-int main(int ac, char **av) {
-
-    if (ac == 2) {
-        
-        std::string src = av[1];
-        ScalarConverter::convert(src);
-    }
-    else
-        std::cout << "ERROR ARGUMENTS\n";
+    int a = 1;
+    int c = 13;
+    std::cout << "Before swap A = " << a << std::endl;
+    std::cout << "Before swap C = " << c << std::endl;
+    swap(a, c);
+    std::cout << "After swap A = " << a << std::endl;
+    std::cout << "After swap C = " << c << std::endl;
+    std::cout << min(a, c) << std::endl;
+    std::cout << max(a, c) << std::endl;
 }
