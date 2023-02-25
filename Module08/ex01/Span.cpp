@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 21:45:07 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/25 15:36:07 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/25 16:31:27 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Span::Span(const Span &obj) {
 Span    &Span::operator=(const Span &obj) {
 
 	if (this != &obj)
-		{this->my_vector = obj.my_vector; this->N = obj.N;}
+		*this = obj;
 	return *this;
 }
 
