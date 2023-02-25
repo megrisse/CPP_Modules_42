@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 17:02:56 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/23 18:26:29 by megrisse         ###   ########.fr       */
+/*   Created: 2023/02/23 18:45:45 by megrisse          #+#    #+#             */
+/*   Updated: 2023/02/24 21:33:05 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "iostream"
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
 
 template <typename T>
-void    inter(T *array, int size, void  (*f)(T const &)) {
-	
-	for (int i = 0; i < size; i++) {
+int easyfind(T &src, int n) {
 
-		f(array[i]);
-	}
-	std::cout << std::endl;
-};
+	typename T::iterator it = std::find(src.begin(), src.end(), n);
+
+	if (it == src.end())
+		throw std::exception();
+	return std::distance(src.begin(), it);
+}

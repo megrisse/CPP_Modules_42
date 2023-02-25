@@ -5,29 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 16:41:39 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/23 17:59:07 by megrisse         ###   ########.fr       */
+/*   Created: 2023/02/23 18:45:48 by megrisse          #+#    #+#             */
+/*   Updated: 2023/02/24 21:44:13 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "whatever.hpp"
-
+#include "easyfind.hpp"
 
 int main() {
 
-
-	int a = 2;
-	int b = 3;
-
-	::swap(a, b);
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	std::cout << "min( a, b ) = " << ::min(a, b) << std::endl;
-	std::cout << "max( a, b ) = " << ::max(a, b) << std::endl;
-	std::string	c = "chaine1";
-	std::string	d = "chaine2";
-	::swap(c, d);
-	std::cout << "c = " << c << " , d = " << d << std::endl;
-	std::cout << "min( c, d ) = " << ::min(c, d) << std::endl;
-	std::cout << "max( c, d) = " << ::max(c, d) << std::endl;
-	return 0;
+    try
+    {
+        /* code */
+        std::vector<int> my_vector(8);
+        for (int i = 0; i < 8; i++)
+        {
+            /* code */
+            my_vector.insert(my_vector.begin() + i, 42);
+        }
+        std::cout << easyfind(my_vector, 5) << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    return 0;   
 }
