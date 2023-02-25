@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 15:38:32 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/25 16:56:13 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/25 17:30:11 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 template <typename T>
 class   MutantStack : public std::stack<T, std::deque<T> > {
 private:
-    //
 public:
     typedef typename std::deque<T>::iterator iterator;
     MutantStack() {
@@ -38,4 +37,12 @@ public:
             *this = obj;
         return *this;
     }
+    iterator begin() {
+
+        return (this->c.begin());
+    };
+    iterator end() {
+
+        return this->c.end();
+    };
 };

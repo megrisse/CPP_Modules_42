@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 21:45:10 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/25 01:31:40 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/25 17:21:57 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
 	Span	&operator=(const Span &obj);
 	Span(unsigned int n);
 	void	addNumber(int n);
+	void	addNumber(int, int);
 	int		shortestSpan();
 	int		longestSpan();
 };
