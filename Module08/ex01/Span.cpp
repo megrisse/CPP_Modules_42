@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 21:45:07 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/25 17:55:43 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/25 18:01:23 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,6 @@ void	Span::addNumber(int n, int oc) {
 	for (int i = 0; i < n; i++) {
 		
 		my_vector.push_back(oc);
-	}
-	std::vector<int>::iterator it = my_vector.begin();
-
-	for (; it != my_vector.end(); it++) {
-
-		std::cout << *it << std::endl;
 	}
 }
 
