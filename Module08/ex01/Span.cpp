@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 21:45:07 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/25 01:54:05 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/25 15:36:07 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ Span::Span(unsigned int n) : N(n) {
 
 void    Span::addNumber(int n) {
 
-	if (my_vector.size() == 0)
-		my_vector.insert(my_vector.begin(), n);
-	else if (my_vector.size() < this->N)
+	 if (my_vector.size() < this->N)
 		my_vector.push_back(n);
 	else
 		throw std::exception();
@@ -46,28 +44,29 @@ void    Span::addNumber(int n) {
 
 int Span::shortestSpan() {
 
-	std::vector<int> tmp(my_vector);
+	if (my_vector.size() < 2)
+		throw std::exception();
+	int	min = INT_MAX;
+	int	min1;
+	for (size_t i = 0; i < my_vector.size(); i++)
+		for (size_t x = i + 1; x < my_vector.size(); ++x) {
+			min1 = std::abs(my_vector[i] - my_vector[x]);
+			if (min < min1)
+				min1 = min;
+		}
+	return (min1);
+}
 
-	// std::cout << my_vector.size() << std::endl;
-	// std::cout << N << std::endl;
-	std::vector<int>::iterator it = my_vector.begin();
-	for (; it != my_vector.end() ; it++)
-	{
-	    std::cout << *it << std::endl;
-	}
+int	Span::longestSpan() {
+
+	if (my_vector.size() < 2)
+		throw std::exception();
+	std::vector<int>	tmp(my_vector);
 	std::sort(tmp.begin(), tmp.end());
+	std::vector<int>::iterator	it;
 	it = tmp.begin();
-	for (; it != tmp.end() ; it++)
-	{
-	    std::cout << *it << std::endl;
-	}
-	it = tmp.begin();
-	
-	std::cout << "=======" << *it << std::endl;
-	std::cout << "=======" << *(++it) << std::endl;
-	std::cout << "=======" << ((*it) - *(++it)) << std::endl;
-	std::cout << std::distance(it, ++it) << std::endl;
-	// std::vector<int>::iterator  iter = tmp.begin() ;
-	// return (std::abs((*iter) - *(++iter)));
-	return 0;
+	int	min = *it;
+	it = tmp.end();
+	int	max = *(--it);
+	return (max - min);
 }
