@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 21:32:56 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/27 22:47:41 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/28 01:35:59 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Fixed::Fixed()  : FixedPoint(0) {
 }
 
 Fixed::~Fixed() {
+    
     // std::cout << "Destructor called" << std::endl;
 }
 

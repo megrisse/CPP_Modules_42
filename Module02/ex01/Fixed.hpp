@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 20:41:52 by megrisse          #+#    #+#             */
-/*   Updated: 2023/01/27 21:36:24 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/27 16:42:49 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ public:
 	Fixed &operator = (const Fixed &fixed);//copy assignment operator overload
 	int		getRawBits() const ;
 	void	setRawBits(int const raw);
+	int		getFixed() const  {
+
+		return FixedPoint;
+	};
 	float   toFloat() const ;
 	int     toInt() const ;
 };

@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 20:41:49 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/13 01:52:00 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/27 14:19:50 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ Fixed::Fixed(const float &f) {
 }
 
 std::ostream & operator <<(std::ostream &out, Fixed const &src) {
+
+	
 	out << float(src.toFloat());
+	
 	return out;
 }
 

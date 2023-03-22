@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 15:38:35 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/25 16:58:16 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/25 21:56:51 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int main() {
 
     MutantStack<int> mstack;
+
     mstack.push(5);
     mstack.push(17);
     std::cout << mstack.top() << std::endl;
@@ -33,6 +34,6 @@ int main() {
         std::cout << *it << std::endl;
         ++it;
     }
-    std::stack<int> s(mstack);
+    // MutantStack<int> sp(mstack);
     return 0;
 }

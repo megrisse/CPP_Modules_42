@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 21:45:00 by megrisse          #+#    #+#             */
-/*   Updated: 2023/02/25 18:01:42 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/02/25 19:08:06 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main() {
 		// much.addNumber(10000, 15);
 		// std::cout <<  " shortestSpan == "<< much.shortestSpan() << std::endl;
 		// std::cout <<  " longestSpan == "<< much.longestSpan() << std::endl;
-		
+
 		sp.addNumber(6);
 		sp.addNumber(3);
 		sp.addNumber(17);
