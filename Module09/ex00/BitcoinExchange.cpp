@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:42:14 by megrisse          #+#    #+#             */
-/*   Updated: 2023/03/22 21:13:26 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/04/04 00:37:38 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ void    BitcoinExchange::parseData() {
 			
 			std::string	first = line.substr(0, line.find_first_of(","));
 			std::string	second = line.substr(line.find_first_of(",") + 1, line.length() - 1);
-			// std::cout << "First = |" << first << ".|" << std::endl;
-			// std::cout << "Second = |" << second << ".|" << std::endl;
 			data[first] = second;
 		}
 		i++;
@@ -98,9 +96,9 @@ int	checkYMD(int year, int month, int day) {
 
 	int	d = 0;
 	if (isLeapYear(year))
-		day = 29;
+		d = 29;
 	else
-		day = 28;
+		d = 28;
 	if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && day > 31)
 			return 1;
 	else if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
@@ -119,9 +117,6 @@ int	BitcoinExchange::getDate(std::string &date) {
 	month = last.substr(0, last.find_first_of("-"));
 	day = date.substr(date.find_last_of("-") + 1, date.length());
 
-	// std::cout << "year => |" << year << "|" << std::endl;
-	// std::cout << "month => |" << month << "|" << std::endl;
-	// std::cout << "day => |" << day << "|" << std::endl;
 	if (month.length() == 1)
 		month = "0" + month;
 	if (day.length() == 1)
@@ -165,8 +160,6 @@ int	BitcoinExchange::getInput(BitcoinExchange &btc, std::string line) {
 	date = line.substr(0, line.find_first_of(" "));
 	value = line.substr(line.find_first_of("|") + 1, line.length());
 
-	// std::cout << "Date =>" << date << std::endl;
-	// std::cout << "value => |" << value << "|" << std::endl;
 	if (btc.getDate(date))
 		return (std::cout << "Error: Bad Input => " << date << std::endl, 1);
 	if (std::stof(value) < 0)
