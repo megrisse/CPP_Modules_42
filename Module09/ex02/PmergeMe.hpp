@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 17:01:12 by megrisse          #+#    #+#             */
-/*   Updated: 2023/04/03 23:36:16 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/04/03 23:51:44 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,12 @@ public:
 		Container	Left;
 		Container	Right;
 		size_t	i = 0;
-		typename Container::iterator	it = _cont.begin();
-		while (it != _cont.end() && i < _cont.size()) {
-
+		for	(typename Container::iterator	it = _cont.begin(); it != _cont.end() && i < _cont.size(); it++) {
+			
 			if (i < Mid)
 				Left.push_back(*it);
 			else
 				Right.push_back(*it);
-			it++;
 			i++;
 		}
 		this->mergeSort(Left);
