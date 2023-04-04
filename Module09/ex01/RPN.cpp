@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 22:19:07 by megrisse          #+#    #+#             */
-/*   Updated: 2023/03/24 01:47:36 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/04/04 20:10:50 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ bool	RPN::parsencalcul(std::string line) {
 
 	int	first;
 	int	second;
+	if (line.length() < 1)
+		return false;
 	for (std::string::iterator it = line.begin(); it != line.end(); it++) {
 
 		if (isvalid(*it))

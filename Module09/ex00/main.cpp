@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:57:42 by megrisse          #+#    #+#             */
-/*   Updated: 2023/03/23 14:54:25 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/04/04 20:08:11 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(int ac, char **av) {
 	std::ifstream   input(file);
 	if (!input.is_open())
 		return (std::cerr << "File Not Opened" << std::endl, 1);
-	else if (input.peek() == std::ifstream::traits_type::eof())
+	else if (input.peek() == std::ifstream::traits_type::eof() || input.peek() == '\n')
 		return (std::cerr << "File Is Empty" << std::endl, 1);
 	while (std::getline(input, line))
 		obj.getInput(obj, line);

@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:42:14 by megrisse          #+#    #+#             */
-/*   Updated: 2023/04/04 00:37:38 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/04/04 20:07:15 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,7 +156,6 @@ int	BitcoinExchange::getInput(BitcoinExchange &btc, std::string line) {
 		return (i++, 0);
 	std::string	date;
 	std::string	value;
-
 	date = line.substr(0, line.find_first_of(" "));
 	value = line.substr(line.find_first_of("|") + 1, line.length());
 
