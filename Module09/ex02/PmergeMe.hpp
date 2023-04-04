@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 17:01:12 by megrisse          #+#    #+#             */
-/*   Updated: 2023/04/03 23:51:44 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/04/04 00:23:40 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
 	PmergeMe &operator=(const PmergeMe &);
 	int		parseData(char **, int);
 	void	Start();
-	void	print(std::string);
+	void	print(std::string, double);
 
 	template <typename Container>
 	void	mergeSort(Container &_cont) {

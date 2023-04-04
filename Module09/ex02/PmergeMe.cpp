@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 17:01:51 by megrisse          #+#    #+#             */
-/*   Updated: 2023/04/03 23:46:36 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/04/04 00:23:29 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,8 @@ int    PmergeMe::parseData(char **av, int size) {
 	return 0;
 }
 
-void    PmergeMe::print(std::string type) {
+void    PmergeMe::print(std::string type, double Now) {
 
-	struct  timeval _time;
-	gettimeofday(&_time, NULL);
-	time_t  Now = _time.tv_sec * 1000000 + _time.tv_usec;
 	std::cout << "Time to process a range of " << Size << " elements with std::" << type << " : " << (Now - Time) << " us" << std::endl;
 }
 
@@ -68,15 +65,19 @@ void    PmergeMe::Start() {
 	gettimeofday(&_time, NULL);
 	this->Time = _time.tv_sec * 1000000 + _time.tv_usec;
 	this->mergeSort(this->myList);
+	gettimeofday(&_time, NULL);
+	time_t	Now = _time.tv_sec * 1000000 + _time.tv_usec;
 	std::cout << "After: ";
 	for(std::list<int>::iterator    it = this->myList.begin(); it != this->myList.end(); it++)
 		std::cout << *it << " ";
 	std::cout << std::endl;
-	print("list");
+	print("list", Now);
 	gettimeofday(&_time, NULL);
 	this->Time = _time.tv_sec * 1000000 + _time.tv_usec;
 	this->mergeSort(this->myQue);
-	print("deque");
+	gettimeofday(&_time, NULL);
+	Now = _time.tv_sec * 1000000 + _time.tv_usec;
+	print("deque", Now);
 	
 	
 }
