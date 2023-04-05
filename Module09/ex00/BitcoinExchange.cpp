@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:42:14 by megrisse          #+#    #+#             */
-/*   Updated: 2023/04/05 20:41:29 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/04/05 22:27:41 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,9 +171,11 @@ int	BitcoinExchange::getInput(BitcoinExchange &btc, std::string line) {
 
 	if (btc.getDate(date))
 		return (std::cout << "Error: Bad Input => " << date << std::endl, 1);
-	if (checkdigit(value) == 1)
+	if (value.length() < 1 || (value.length() == 1 && !std::isdigit(value[0])))
+		return (std::cout << "Error: Value Needed ." << std::endl, 1);
+	else if (checkdigit(value) == 1)
 			return (std::cout << "Error: Value Must be Numeric => " << value << std::endl, 1);
-	if (std::stof(value) < 0)
+	else if (std::stof(value) < 0)
 		return (std::cerr << "Error: Not A Positive Number => " << value << std::endl, 1);
 	else if (std::stof(value) > 1000)
 		return (std::cerr << "Error: Too Large Number => " << value << std::endl, 1);
