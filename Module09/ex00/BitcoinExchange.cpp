@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:42:14 by megrisse          #+#    #+#             */
-/*   Updated: 2023/04/04 20:07:15 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/04/05 20:41:29 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,6 +148,16 @@ std::string	BitcoinExchange::getValue(std::string key) {
 	return data.find(key)->second;
 }
 
+int	checkdigit(std::string value) {
+
+	for (std::string::iterator i = value.begin(); i != value.end(); i++) {
+
+		if ((*i < '0' || *i > '9') && *i != '.' && *i != '-')
+			return 1;
+	}
+	return 0;
+}
+
 int	BitcoinExchange::getInput(BitcoinExchange &btc, std::string line) {
 
 	static int i = 0;
@@ -157,14 +167,16 @@ int	BitcoinExchange::getInput(BitcoinExchange &btc, std::string line) {
 	std::string	date;
 	std::string	value;
 	date = line.substr(0, line.find_first_of(" "));
-	value = line.substr(line.find_first_of("|") + 1, line.length());
+	value = line.substr(line.find_last_of(" ") + 1, line.length());
 
 	if (btc.getDate(date))
 		return (std::cout << "Error: Bad Input => " << date << std::endl, 1);
+	if (checkdigit(value) == 1)
+			return (std::cout << "Error: Value Must be Numeric => " << value << std::endl, 1);
 	if (std::stof(value) < 0)
-		return (std::cerr << "Error: not a positive number." << std::endl, 1);
+		return (std::cerr << "Error: Not A Positive Number => " << value << std::endl, 1);
 	else if (std::stof(value) > 1000)
-		return (std::cerr << "Error: too large a number." << std::endl, 1);
+		return (std::cerr << "Error: Too Large Number => " << value << std::endl, 1);
 	float res = std::stof(value) * std::stof(getValue(date));
 	std::cout << date << " => " << value << " = " << res << std::endl;
 	return 0;
