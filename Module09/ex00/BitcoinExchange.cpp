@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:42:14 by megrisse          #+#    #+#             */
-/*   Updated: 2023/04/05 22:27:41 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/04/07 20:29:40 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,22 @@ int	checkYMD(int year, int month, int day) {
 	return 0;
 }
 
+int	check(std::string date) {
+
+	std::string::iterator	it = date.begin();
+	int		c = 0;
+	while (it != date.end() && ((*it >= '0' && *it <= '9') || *it == '-')) {
+
+		if (*it == '-')
+			c++;
+		it++;
+	}
+	if ((it != date.end() && (*it < '0' || *it > '9')) || c != 2)
+		return 1;
+	return 0;
+		
+}
+
 int	BitcoinExchange::getDate(std::string &date) {
 
 	std::string	year, month, day;
@@ -169,9 +185,9 @@ int	BitcoinExchange::getInput(BitcoinExchange &btc, std::string line) {
 	date = line.substr(0, line.find_first_of(" "));
 	value = line.substr(line.find_last_of(" ") + 1, line.length());
 
-	if (btc.getDate(date))
-		return (std::cout << "Error: Bad Input => " << date << std::endl, 1);
-	if (value.length() < 1 || (value.length() == 1 && !std::isdigit(value[0])))
+	if (check(date) || btc.getDate(date))
+		return (std::cout << "Error: Bad Date Input => " << date << std::endl, 1);
+	if (value.length() < 1 || (value.length() == 1 && !std::isalnum(value[0])))
 		return (std::cout << "Error: Value Needed ." << std::endl, 1);
 	else if (checkdigit(value) == 1)
 			return (std::cout << "Error: Value Must be Numeric => " << value << std::endl, 1);

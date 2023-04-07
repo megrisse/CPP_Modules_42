@@ -6,7 +6,7 @@
 /*   By: megrisse <megrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 22:19:07 by megrisse          #+#    #+#             */
-/*   Updated: 2023/04/04 20:10:50 by megrisse         ###   ########.fr       */
+/*   Updated: 2023/04/07 23:03:06 by megrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,12 @@ int	getCalcul(int first, int second, char c) {
 	else if (c == '*')
 		res = second * first;
 	else if (c == '/')
-		res = second / first;
+	{
+		if (first != 0)
+			res = second / first;
+		else
+			throw std::runtime_error("Error: can't divise 0. !!");
+	}
 	return res;
 }
 
@@ -88,15 +93,20 @@ bool	RPN::parsencalcul(std::string line) {
 		if (isvalid(*it))
 			return false;
 		else if (!isoperator(*it)) {
-
+			if (data.size() < 2)
+				throw std::runtime_error("Error: found operator and numbers in stack not enough. !");
 			first = data.top();
 			data.pop();
 			second = data.top();
+			data.pop();
 			data.push(getCalcul(first, second, *it));
 		}
 		else if (!isnumber(*it))
 			data.push(chartoint(*it));
 	}
-	std::cout << data.top() << std::endl;
+	if (data.size() == 1)
+		std::cout << data.top() << std::endl;
+	else 
+		throw std::runtime_error("Error: finnish calcul and numbers in stack not 1. !!");
 	return (true);
 }
